@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>iPhone 17 Pro 買取価格比較</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0f1117;
+      --surface: #1a1d27;
+      --border: #2a2d3e;
+      --text: #e8eaf0;
+      --text-sub: #7b7f9a;
+      --accent: #4f9cf9;
+      --gold: #f5c842;
+      --green: #3ecf8e;
+      --red: #f06a6a;
+      --radius: 10px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Hiragino Sans', sans-serif;
+      min-height: 100vh;
+      padding: 24px 16px;
+    }
+
+    header {
+      max-width: 860px;
+      margin: 0 auto 28px;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 6px;
+    }
+
+    .meta {
+      font-size: 0.82rem;
+      color: var(--text-sub);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--green);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .card {
+      max-width: 860px;
+      margin: 0 auto 20px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+
+    .card-title {
+      padding: 14px 20px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-sub);
+      border-bottom: 1px solid var(--border);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    thead th {
+      padding: 12px 16px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--text-sub);
+      text-align: right;
+      border-bottom: 1px solid var(--border);
+      white-space: nowrap;
+    }
+
+    thead th:first-child { text-align: left; }
+
+    tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.15s;
+    }
+
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: rgba(255,255,255,0.03); }
+
+    td {
+      padding: 14px 16px;
+      font-size: 0.9rem;
+      text-align: right;
+      white-space: nowrap;
+    }
+
+    td:first-child {
+      text-align: left;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .price {
+      font-size: 1rem;
+      font-weight: 600;
+      font-variant-numeric: tabular-nums;
+      color: var(--text);
+    }
+
+    .price.best {
+      color: var(--gold);
+    }
+
+    .price.null {
+      color: var(--text-sub);
+      font-size: 0.8rem;
+      font-weight: 400;
+    }
+
+    .badge-best {
+      display: inline-block;
+      background: rgba(245,200,66,0.15);
+      color: var(--gold);
+      font-size: 0.65rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      margin-left: 6px;
+      letter-spacing: 0.05em;
+    }
+
+    .store-link {
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.78rem;
+    }
+
+    .store-link:hover { text-decoration: underline; }
+
+    .error-badge {
+      display: inline-block;
+      background: rgba(240,106,106,0.15);
+      color: var(--red);
+      font-size: 0.7rem;
+      padding: 2px 7px;
+      border-radius: 4px;
+      margin-left: 6px;
+    }
+
+    .summary-card {
+      max-width: 860px;
+      margin: 0 auto 20px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .summary-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+    }
+
+    .summary-item .label {
+      font-size: 0.78rem;
+      color: var(--text-sub);
+      margin-bottom: 4px;
+    }
+
+    .summary-item .value {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--gold);
+      font-variant-numeric: tabular-nums;
+    }
+
+    .summary-item .store {
+      font-size: 0.75rem;
+      color: var(--text-sub);
+      margin-top: 3px;
+    }
+
+    @media (max-width: 520px) {
+      .summary-card { grid-template-columns: 1fr; }
+      td, th { padding: 10px 10px; font-size: 0.82rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>iPhone 17 Pro 買取価格比較</h1>
+    <div class="meta">
+      <span class="dot"></span>
+      <span>最終更新: <span id="updated">---</span></span>
+      <span>・2時間ごと自動更新</span>
+    </div>
+  </header>
+
+  <!-- 最高値サマリー -->
+  <div class="summary-card" id="summary">
+    <div class="summary-item">
+      <div class="label">256GB 最高買取価格</div>
+      <div class="value" id="best256">---</div>
+      <div class="store" id="best256store">-</div>
+    </div>
+    <div class="summary-item">
+      <div class="label">512GB 最高買取価格</div>
+      <div class="value" id="best512">---</div>
+      <div class="store" id="best512store">-</div>
+    </div>
+  </div>
+
+  <!-- 価格テーブル: 256GB -->
+  <div class="card">
+    <div class="card-title">iPhone 17 Pro — 256GB</div>
+    <table>
+      <thead>
+        <tr>
+          <th>買取店</th>
+          <th>買取価格</th>
+        </tr>
+      </thead>
+      <tbody id="table256"></tbody>
+    </table>
+  </div>
+
+  <!-- 価格テーブル: 512GB -->
+  <div class="card">
+    <div class="card-title">iPhone 17 Pro — 512GB</div>
+    <table>
+      <thead>
+        <tr>
+          <th>買取店</th>
+          <th>買取価格</th>
+        </tr>
+      </thead>
+      <tbody id="table512"></tbody>
+    </table>
+  </div>
+
+  <script>
+    function fmt(n) {
+      if (n == null) return null;
+      return '¥' + n.toLocaleString('ja-JP');
+    }
+
+    function buildTable(tbodyId, stores, cap, bestStore) {
+      const tbody = document.getElementById(tbodyId);
+      tbody.innerHTML = '';
+
+      // 価格順にソート（nullは末尾）
+      const sorted = Object.entries(stores).sort(([, a], [, b]) => {
+        const pa = a[cap] ?? -1;
+        const pb = b[cap] ?? -1;
+        return pb - pa;
+      });
+
+      for (const [key, store] of sorted) {
+        const tr = document.createElement('tr');
+        const price = store[cap];
+        const isBest = key === bestStore;
+
+        tr.innerHTML = `
+          <td>
+            <a class="store-link" href="${store.url}" target="_blank">${store.name}</a>
+            ${store.error ? `<span class="error-badge">取得失敗</span>` : ''}
+          </td>
+          <td>
+            <span class="price ${price == null ? 'null' : isBest ? 'best' : ''}">
+              ${price != null ? fmt(price) : '---'}
+            </span>
+            ${isBest && price != null ? '<span class="badge-best">BEST</span>' : ''}
+          </td>
+        `;
+        tbody.appendChild(tr);
+      }
+    }
+
+    async function load() {
+      try {
+        const res = await fetch(`data.json?t=${Date.now()}`);
+        const data = await res.json();
+
+        document.getElementById('updated').textContent = data.updated_at;
+
+        const stores = data.stores;
+
+        // 最高値を計算
+        let best256 = null, best256key = null;
+        let best512 = null, best512key = null;
+
+        for (const [key, store] of Object.entries(stores)) {
+          if (store['256GB'] != null && (best256 == null || store['256GB'] > best256)) {
+            best256 = store['256GB'];
+            best256key = key;
+          }
+          if (store['512GB'] != null && (best512 == null || store['512GB'] > best512)) {
+            best512 = store['512GB'];
+            best512key = key;
+          }
+        }
+
+        // サマリー更新
+        document.getElementById('best256').textContent = best256 != null ? fmt(best256) : '---';
+        document.getElementById('best256store').textContent = best256key ? stores[best256key].name : '-';
+        document.getElementById('best512').textContent = best512 != null ? fmt(best512) : '---';
+        document.getElementById('best512store').textContent = best512key ? stores[best512key].name : '-';
+
+        buildTable('table256', stores, '256GB', best256key);
+        buildTable('table512', stores, '512GB', best512key);
+
+      } catch (e) {
+        console.error(e);
+        document.getElementById('updated').textContent = '読み込み失敗';
+      }
+    }
+
+    load();
+    // 5分ごとに再読み込み（GitHub Pagesのキャッシュをバイパス）
+    setInterval(load, 5 * 60 * 1000);
+  </script>
+</body>
+</html>
