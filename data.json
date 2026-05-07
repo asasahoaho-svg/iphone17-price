@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-07 12:34",
+  "updated_at": "2026-05-07 15:40",
   "stores": {
     "shoten": {
       "name": "買取商店",
@@ -11,8 +11,8 @@
     "wiki": {
       "name": "買取wiki",
       "url": "https://iphonekaitori.tokyo",
-      "256GB": 194500,
-      "512GB": 194500,
+      "256GB": 195500,
+      "512GB": 195500,
       "error": null
     },
     "rudeya": {
