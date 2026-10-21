@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-21 22:34",
+  "updated_at": "2026-10-22 03:29",
   "stores": {
     "shoten": {
       "name": "買取商店",
@@ -20,7 +20,7 @@
       "url": "https://kaitori-rudeya.com/category/detail/219/",
       "256GB": null,
       "512GB": null,
-      "error": null
+      "error": "取得失敗"
     }
   }
 }
