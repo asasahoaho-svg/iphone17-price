@@ -1,12 +1,12 @@
 {
-  "updated_at": "2026-10-27 04:47",
+  "updated_at": "2026-10-27 08:38",
   "stores": {
     "shoten": {
       "name": "買取商店",
       "url": "https://iphone-shoten.com/kaitori",
-      "256GB": 195000,
-      "512GB": 110000,
-      "error": null
+      "256GB": null,
+      "512GB": null,
+      "error": "取得失敗"
     },
     "wiki": {
       "name": "買取wiki",
